@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>json2TableList demo, by Juan Chamizo González</title>
+    <link rel="stylesheet" href="bower_components/foundation/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
+    <link rel="stylesheet" href="json2TableList.css">
+    <script type="text/javascript" src="bower_components/js-beautify/js/lib/beautify.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+    <script type="text/javascript" src="bower_components/underscore.string/lib/underscore.string.js"></script>
+    <script type="text/javascript" src="bower_components/foundation/js/foundation.min.js"></script>
+    <script type="text/javascript" src="bower_components/moment/min/moment-with-locales.min.js"></script>
+    <script src="/lib/ace/src-min/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="lib/examples.js"></script>
+    <script type="text/javascript" src="lib/json2TableList.js"></script>
+</head>
+
+<body>
+    <div class="row">
+
+        <h1>json2TableList demo</h1>
+        <div class="large-8 columns panel">
+            <h3>The json data</h3>
+            Please, select an
+            <select id="examples" inline>
+                <option selected id='ex1' value='1'>example1 (simple table)</option>
+                <option id='ex2' value='2'>example2 (semantic explain)</option>
+                <option id='ex3' value='3'>example3 (500 rows)</option>
+                <option id='ex4' value='4'>example4</option>
+                <option id='ex5' value='5'>example5</option>
+
+            </select>or paste your own json code in the editor below... or modify the examples to test.
+
+
+
+            <div id=editor></div>
+            <!--            <a href="http://ace.c9.io/">Powered by Ace <img src=http://ace.c9.io/doc/site/images/ace-tab.png> </a>-->
+
+
+        </div>
+
+
+        <div class="large-4 columns panel">
+
+            <h3>The config</h3>
+
+            <div id="config-editor"></div>
+        </div>
+
+
+
+
+        <div class="large-12 columns panel">
+            <h3>The generated table list</h3>
+            <div id="thetable"></div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        editorconf = ace.edit("config-editor");
+        editorconf.setTheme("ace/theme/textmate")
+         editorconf.getSession().setMode("ace/mode/json")
+         editorconf.renderer.setShowGutter(false);
+         //editorconf.setValue(JSON.stringify(config, undefined, 4))
+
+        editor = ace.edit("editor");
+        editor.setTheme("ace/theme/textmate");
+        editor.getSession().setMode("ace/mode/json");
+        /*editor.setOptions({
+            maxLines: Infinity
+        })*/
+
+
+        $(document).on('ready', function() {
+            $('#examples').change(function() {
+                console.clear()
+
+                var theEditorValue = typeof examples[$(this).val()] == 'object' ? JSON.stringify(examples[$(this).val()], undefined, 4) : examples[$(this).val()]
+                editor.setValue(theEditorValue)
+                editor.moveCursorTo(1)
+                editorconf.setValue(JSON.stringify(vconfig[$(this).val()], undefined, 4))
+                editorconf.moveCursorTo(1)
+
+            })
+
+
+
+            function recargar() {
+                try {
+                    json2TableList(JSON.parse(editor.getValue()), 'thetable', JSON.parse(editorconf.getValue()))
+                } catch (err) {
+                    console.log(err)
+                    $('#thetable').text("There is error in JSON data, please revise it, or reselect an example").addClass('error')
+                }
+            }
+
+
+            editor.getSession().on('change', function(e) {
+                recargar()
+            });
+
+            editorconf.getSession().on('change', function(e) {
+                recargar()
+            });
+
+
+
+            $('#examples').change()
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+
+#editor,
+
+#config-editor {
+
+    border: 1px solid #777;
+
+    min-height: 200px;
+
+    width: 100%;
+
+}
+
+select#examples {
+
+    display: inline-block !important;
+
+    margin: 0 5px;
+
+    width: auto;
+
+}
+
+.autol_table_title {
+
+    background: #000;
+
+    color: #fff;
+
+    display: inline-block;
+
+    padding: .5em;
+
+    font-weight: bold;
+
+}
+
+table.autol span {
+
+    border: 1px solid #eee;
+
+    margin: 1px;
+
+    padding: 0 2px;
+
+}
+
+table.autol span[type="number"] {
+
+    background: none repeat scroll 0 0 #bfffe6;
+
+}
+
+table.autol div.array_element {
+
+    border: 1px solid #777;
+
+    margin: 7px;
+
+    opacity: 0.7;
+
+    padding: 1px;
+
+}
+
+table.autol span[type="string"] {
+
+    background: none repeat scroll 0 0 #5fd5ff;
+
+}
+
+table.autol table.object_table {
+
+    background: none repeat scroll 0 0 #ffdc9f;
+
+    opacity: 0.7;
+
+}
+
+table.autol td {
+
+    border: 1px solid #eee;
+
+    padding: 0;
+
+}
+
+.panel {
+
+    min-height: 350px;
+
+}
+
+.column-number {
+
+    text-align: right;
+
+    padding-right: 2px;
+
+}
+
+div[operation] {
+
+    background: #777;
+
+    color: #fff;
+
+    text-align: right;
+
+    padding-right: 2px;
+
+}
+
+div[operation]:before {
+
+    content: attr(operation);
+
+    display: block;
+
+    font-weight: normal;
+
+    text-align: left;
+
+    padding: 2px;
+
+}
