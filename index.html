@@ -28,8 +28,8 @@
                 <option selected id='ex1' value='1'>example1 (simple table)</option>
                 <option id='ex2' value='2'>example2 (semantic explain)</option>
                 <option id='ex3' value='3'>example3 (500 rows)</option>
-                <option id='ex4' value='4'>example4</option>
-                <option id='ex5' value='5'>example5</option>
+                <option id='ex4' value='4'>example4 (Arrays into arrays)</option>
+                <option id='ex5' value='5'>example5 (Sum & average columns)</option>
 
             </select>or paste your own json code in the editor below... or modify the examples to test.
 
@@ -46,7 +46,7 @@
 
             <h3>The config</h3>
 
-            <div id="config-editor"></div>
+            <div id="config-editor">{}</div>
         </div>
 
 
@@ -83,7 +83,7 @@
                 var theEditorValue = typeof examples[$(this).val()] == 'object' ? JSON.stringify(examples[$(this).val()], undefined, 4) : examples[$(this).val()]
                 editor.setValue(theEditorValue)
                 editor.moveCursorTo(1)
-                editorconf.setValue(JSON.stringify(vconfig[$(this).val()], undefined, 4))
+                editorconf.setValue(JSON.stringify(vconfig[$(this).val()], undefined, 4) || "{}")
                 editorconf.moveCursorTo(1)
 
             })

@@ -21,17 +21,23 @@ select#examples {
 
 }
 
+table.autol {
+
+    width: 100%;
+
+}
+
 .autol_table_title {
 
-    background: #000;
+    background: none repeat scroll 0 0 #000;
 
     color: #fff;
 
     display: inline-block;
 
-    padding: .5em;
-
     font-weight: bold;
+
+    padding: 0.5em;
 
 }
 
@@ -93,21 +99,21 @@ table.autol td {
 
 .column-number {
 
-    text-align: right;
-
     padding-right: 2px;
+
+    text-align: right;
 
 }
 
 div[operation] {
 
-    background: #777;
+    background: none repeat scroll 0 0 #777;
 
     color: #fff;
 
-    text-align: right;
-
     padding-right: 2px;
+
+    text-align: right;
 
 }
 
@@ -119,8 +125,18 @@ div[operation]:before {
 
     font-weight: normal;
 
+    padding: 2px;
+
     text-align: left;
 
-    padding: 2px;
+}
+
+table.uncolor span[type=number] {
+
+    background: none;
+
+    display: block;
+
+    text-align: right;
 
 }
