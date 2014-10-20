@@ -9,6 +9,8 @@
 
     width: 100%;
 
+    background-color: #CFFFD1;
+
 }
 
 select#examples {
@@ -138,5 +140,27 @@ table.uncolor span[type=number] {
     display: block;
 
     text-align: right;
+
+}
+
+#config-editor.error,
+
+#editor.error {
+
+    background-color: #FF9F9F;
+
+}
+
+.panel:hover {
+
+    border: 1px solid #777;
+
+}
+
+select#examples {
+
+    height: 20px;
+
+    padding: 0px;
 
 }

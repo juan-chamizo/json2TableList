@@ -21,31 +21,29 @@
     <div class="row">
 
         <h1>json2TableList demo</h1>
-        <div class="large-8 columns panel">
+        <div class="large-7 columns panel">
             <h3>The json data</h3>
-            Please, select an
-            <select id="examples" inline>
-                <option selected id='ex1' value='1'>example1 (simple table)</option>
-                <option id='ex2' value='2'>example2 (semantic explain)</option>
-                <option id='ex3' value='3'>example3 (500 rows)</option>
-                <option id='ex4' value='4'>example4 (Arrays into arrays)</option>
-                <option id='ex5' value='5'>example5 (Sum & average columns)</option>
+            <p>Please, select an
+                <select id="examples" inline>
+                    <option selected id='ex1' value='1'>example1 (simple table)</option>
+                    <option id='ex2' value='2'>example2 (semantic explain)</option>
+                    <option id='ex3' value='3'>example3 (500 rows)</option>
+                    <option id='ex4' value='4'>example4 (Arrays into arrays)</option>
+                    <option id='ex5' value='5'>example5 (Sum & average columns)</option>
 
-            </select>or paste your own json code in the editor below... or modify the examples to test.
-
-
+                </select>or paste your own json code in the editor below... or modify the examples to test.</p>
 
             <div id=editor></div>
-            <!--            <a href="http://ace.c9.io/">Powered by Ace <img src=http://ace.c9.io/doc/site/images/ace-tab.png> </a>-->
 
 
         </div>
 
 
-        <div class="large-4 columns panel">
+        <div class="large-5 columns panel">
 
             <h3>The config</h3>
-
+            <p>You can modify de options (in json format), and see the result inline. Go!
+            </p>
             <div id="config-editor">{}</div>
         </div>
 
@@ -65,10 +63,10 @@
         editorconf = ace.edit("config-editor");
         editorconf.setTheme("ace/theme/textmate")
          editorconf.getSession().setMode("ace/mode/json")
-         editorconf.renderer.setShowGutter(false);
+         //         editorconf.renderer.setShowGutter(false);
          //editorconf.setValue(JSON.stringify(config, undefined, 4))
 
-        editor = ace.edit("editor");
+         editor = ace.edit("editor");
         editor.setTheme("ace/theme/textmate");
         editor.getSession().setMode("ace/mode/json");
         /*editor.setOptions({
@@ -92,7 +90,26 @@
 
             function recargar() {
                 try {
-                    json2TableList(JSON.parse(editor.getValue()), 'thetable', JSON.parse(editorconf.getValue()))
+                    data = JSON.parse(editor.getValue())
+                    $("#editor").removeClass('error')
+                } catch (e) {
+                    if (e) {
+                        $("#editor").addClass('error')
+                    }
+                }
+
+                try {
+                    config = JSON.parse(editorconf.getValue())
+                    $("#config-editor").removeClass('error')
+                } catch (e) {
+                    if (e) {
+                        $("#config-editor").addClass('error')
+                    }
+                }
+
+
+                try {
+                    json2TableList(data, 'thetable', config)
                 } catch (err) {
                     console.log(err)
                     $('#thetable').text("There is error in JSON data, please revise it, or reselect an example").addClass('error')
