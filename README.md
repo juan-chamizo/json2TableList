@@ -68,10 +68,6 @@ This is the default set options, and this is the format:
 |cellDateFormat| 'DD MM YYYY' |String| Use de momentjs date format  http://momentjs.com|{cellDateFormat:"DD/MM/YYYY"}|
 |createCellClassLimit|10|Int or false|Set each cell with a class equal to content, for example: a cell with content "woman" create _class=woman_. Whenever the size of the content is less than or equal to _createCellClassLimit_. If set, the content is _slugify_|{createCellClassLimit: 20}<br>{createCellClassLimit: false}|
 |allowEvalCells|true|true or false|Allow parse javascript code in the content. The sintax is: <br>'_eval "IAmAString".toUpperCase()_'(Note one space after _eval_ )|{allowEvalCells:false}|
-
-
-
-
 |calculateColumns| false | false or Object definition|Define the opetarion for numeric columns. Precision is optional and indicate the decimal positions.|{"calculateColumns":[<br>{column: "a",operation: "sum"},<br>{column: "b",operation: "avg",precision:3}<br>]}|
 
 ##Examples
