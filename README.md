@@ -8,10 +8,10 @@ At this moment you must download del main files (/lib/json2TableList.js) a refer
 ```html
     <head>
         <!-- Dependencies -->
-        <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js"></script>
-        <script type="text/javascript" src="http://cdn.jsdelivr.net/underscorejs/1.7.0/underscore-min.js"></script>
-        <script type="text/javascript" src="http://cdn.jsdelivr.net/underscore.string/2.3.3/underscore.string.min.js"></script>
-        <script type="text/javascript" src="http://cdn.jsdelivr.net/momentjs/2.8.3/moment.min.js"></script>
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+        <script type="text/javascript" src="bower_components/underscore.string/dist/underscore.string.min.js"></script>
+        <script type="text/javascript" src="bower_components/moment/min/moment-with-locales.min.js"></script>
         
         <!-- The library-->
         <script type="text/javascript" src="lib/json2TableList.js"></script>

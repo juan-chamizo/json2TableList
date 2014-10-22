@@ -20,7 +20,8 @@
         "bower_components",
         "test",
         "tests",
-        "*sublime*"
+        "*sublime*",
+        "index.html"
     ],
     "description": "A simple way to convert an objects array in a html table with jQuery, every json object is a row in the table",
     "dependencies": {
