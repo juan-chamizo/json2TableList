@@ -51,7 +51,7 @@ This is the default set options, and this is the format:
 
 ```
 | option |default| posible values| description | examples |
-|-|:-::-:|-|-|
+|-|:-:|:-:|-|-|
 |rowsId| _id| String| The name of the key (column) that will be the row id in each &lt;tr&gt; in the result table. If the column name don't exist, will have no effect. |{rowsId:'name'}|
 |showRowIdColumn| false| _true_ or _false_ |  Create or not a column _TD_ for the key _rowId_  Default = false|{<br>showRowIdColumn:true<br>}
 |title|false|String|If indicated showing a title in the table|{title:"This a table title"}
