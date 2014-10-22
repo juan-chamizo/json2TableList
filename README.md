@@ -59,11 +59,9 @@ This is the default set options, and this is the format:
 
 
 
-|option|default|posible values|description|examples|
-
-
-
-|rowsId| _id| String| The name of the key (column) that will be the row id in each &lt;tr&gt; in the result table. If the column name don't exist, will have no effect. |{rowsId:'name'}|
+|option |default|posible values|description              |examples           |
+|-------|-------|--------------|-------------------------|-------------------|
+|rowsId| _id| String|The name of the key (column) that will be the row id in each &lt;tr&gt; in the result table. If the column name don't exist, will have no effect. |{rowsId:'name'}|
 
 
 
