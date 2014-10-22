@@ -1,0 +1,32 @@
+{
+    "name": "json2TableList",
+    "version": "0.5.0",
+    "homepage": "https://github.com/jotakaele/json2TableList",
+    "authors": [
+        "Juan Chamizo González <juan.chamizo@gmail.com>"
+    ],
+    "main": "/lib/json2TableList.js",
+    "keywords": [
+        "json",
+        "table",
+        "html",
+        "list"
+    ],
+    "license": "MIT",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests",
+        "*sublime*"
+    ],
+    "description": "A simple way to convert an objects array in a html table with jQuery, every json object is a row in the table",
+    "dependencies": {
+        "jquery": "~2.1.1",
+        "moment": "~2.8.3",
+        "underscore.string": "~2.3.3",
+        "underscore": "~1.7.0"
+    }
+}
