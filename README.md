@@ -53,12 +53,12 @@ This is the default set options, and this is the format:
 | option |default| posible values| description | examples |
 |-|:-:|:-:|-|-|
 |rowsId| _id| String| The name of the key (column) that will be the row id in each &lt;tr&gt; in the result table. If the column name don't exist, will have no effect. |{rowsId:'name'}|
-|showRowIdColumn| false| _true_ or _false_ |  Create or not a column _TD_ for the key _rowId_  Default = false|{<br>showRowIdColumn:true<br>}
+|showRowIdColumn| false| _true_ or _false_ |  Create or not a column _TD_ for the key _rowId_  Default = false|{<br>showRowIdColumn:true<br>}|
 |title|false|String|If indicated showing a title in the table|{title:"This a table title"}
 |tableClass|false|String|Set a class in the table, Separate the class name with a space | {tableClass:"my-class myotherclass"}|
-|cellDateFormat| 'DD MM YYYY' |String| Use de momentjs date format  http://momentjs.com|{cellDateFormat:"DD/MM/YYYY"}|       
+|cellDateFormat| 'DD MM YYYY' |String| Use de momentjs date format  http://momentjs.com|{cellDateFormat:"DD/MM/YYYY"}|
 |createCellClassLimit|10|Int or false|Set each cell with a class equal to content, for example: a cell with content "woman" create _class=woman_. Whenever the size of the content is less than or equal to _createCellClassLimit_. If set, the content is _slugify_|{createCellClassLimit: 20}<br>{createCellClassLimit: false}|
-|allowEvalCells|true|true or false|Allow parse javascript code in the content. The sintax is: <br>'_eval "IAmAString".toUpperCase()_'(Note one space after _eval_ )|{allowEvalCells:false}
+|allowEvalCells|true|true or false|Allow parse javascript code in the content. The sintax is: <br>'_eval "IAmAString".toUpperCase()_'(Note one space after _eval_ )|{allowEvalCells:false}|
 |calculateColumns| false | false or Object definition|Define the opetarion for numeric columns. Precision is optional and indicate the decimal positions.|{"calculateColumns":[<br>{column: "a",operation: "sum"},<br>{column: "b",operation: "avg",precision:3}<br>]}|
 
 ##Examples
