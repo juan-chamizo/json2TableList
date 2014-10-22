@@ -13,6 +13,7 @@
     <script type="text/javascript" src="http://cdn.jsdelivr.net/foundation/5.4.6/js/foundation.min.js"></script>
     <script type="text/javascript" src="http://cdn.jsdelivr.net/momentjs/2.8.3/moment.min.js"></script>
     <script type="text/javascript" src="http://cdn.jsdelivr.net/ace/1.1.7/min/ace.js"></script>
+
     <script type="text/javascript" src="lib/examples.js"></script>
     <script type="text/javascript" src="lib/json2TableList.js"></script>
 </head>
@@ -20,7 +21,9 @@
 <body>
     <div class="row">
 
-        <h1>json2TableList demo</h1>
+
+        <h1 class="large-6 column">json2TableList demo. </h1>
+        <a href="https://github.com/jotakaele/json2TableList" class="button  large-6 column ">Get & read documentation at Github</a>
         <div class="large-7 columns panel">
             <h3>The json data</h3>
             <p>Please, select an
@@ -60,6 +63,7 @@
 
 
     <script>
+        $(document).foundation();
         editorconf = ace.edit("config-editor");
         editorconf.setTheme("ace/theme/textmate")
          editorconf.getSession().setMode("ace/mode/json")
