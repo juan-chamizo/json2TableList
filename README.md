@@ -94,7 +94,6 @@ In the demo page in http://jotakaele.github.io/json2TableList/
 ##Author
 - Juan Chamizo González
 - juan.chamizo@gmail.com
-- @juan_chamizo
 
 ##License
 Released under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
